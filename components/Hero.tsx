@@ -17,8 +17,8 @@ const Hero = () => {
                 Visualize Success Daily
               </h2>
               <p className="max-w-[500px] md:text-xl text-gray-300">
-                Take control of your projects with our simple yet powerful
-                Kanban board.
+                Take control of your projects with our
+                simple yet powerful Kanban board.
               </p>
             </div>
             <Link href={"/sign-up"}>
