@@ -7,10 +7,7 @@ import Button from "@/components/ui/Button";
 import SyncLoader from "react-spinners/SyncLoader";
 import toast from "react-hot-toast";
 import Input from "@/components/ui/Input";
-import {
-  createNewBoard,
-  createTask,
-} from "@/app/actions/boardActions";
+import { createNewBoard, createTask } from "@/app/actions/boardActions";
 
 const variants = {
   hidden: { opacity: 0 },
@@ -33,7 +30,7 @@ const OnboardingForm = ({
     if (boardId !== null) {
       router.replace("/mykanban");
     }
-  }, []);
+  }, [boardId, router]);
 
   const stepOneSubmit = () => {
     setStep(2);
@@ -108,11 +105,7 @@ const OnboardingForm = ({
               placeholder="My First Task..."
               disabled={loading}
             />
-            <Input
-              type="hidden"
-              value={boardId!}
-              name="boardId"
-            />
+            <Input type="hidden" value={boardId!} name="boardId" />
 
             <div className="flex justify-between w-4/5 mb-10">
               <Button
@@ -120,11 +113,7 @@ const OnboardingForm = ({
                 onClick={goBack}
                 disabled={loading}
               />
-              <Button
-                text="Continue"
-                type="submit"
-                disabled={loading}
-              />
+              <Button text="Continue" type="submit" disabled={loading} />
             </div>
             {loading ? (
               <div className="flex gap-3 items-center text-white">
