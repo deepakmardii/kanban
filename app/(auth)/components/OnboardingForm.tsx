@@ -30,7 +30,7 @@ const OnboardingForm = ({
     if (boardId !== null) {
       router.replace("/mykanban");
     }
-  }, [boardId, router]);
+  }, []);
 
   const stepOneSubmit = () => {
     setStep(2);
@@ -66,7 +66,7 @@ const OnboardingForm = ({
           className="w-full text-center"
         >
           <h1 className="mb-10 text-4xl font-bold uppercase">
-            Hey {user} 👋 Let's Give Your Board a Name!
+            Hey {user} 👋 Let&apos;s Give Your Board a Name!
           </h1>
           <form
             className="flex flex-col gap-10 items-center"
@@ -92,7 +92,7 @@ const OnboardingForm = ({
           className="w-full text-center"
         >
           <h1 className="mb-10 text-4xl font-bold uppercase">
-            Now Let's Add your first task! 😊
+            Now Let&apos;s Add your first task! 😊
           </h1>
           <form
             onSubmit={stepTwoSubmit}

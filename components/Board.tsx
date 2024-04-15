@@ -1,9 +1,6 @@
 "use client";
 import axios from "axios";
-import {
-  DropResult,
-  DragDropContext,
-} from "@hello-pangea/dnd";
+import { DropResult, DragDropContext } from "@hello-pangea/dnd";
 import Column from "./Column";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -14,9 +11,7 @@ import Modal from "./ui/Modal";
 import { createTask } from "@/app/actions/boardActions";
 //SERVER ACTIONS FOR MODAL
 
-const Board: React.FC<{ board: BoardTypes | null }> = ({
-  board,
-}) => {
+const Board: React.FC<{ board: BoardTypes | null }> = ({ board }) => {
   const [tasks, setTask] = useState<Task[] | null>(null);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
@@ -50,9 +45,7 @@ const Board: React.FC<{ board: BoardTypes | null }> = ({
     )
       return;
 
-    const draggedTask = tasks!.find(
-      (task) => task.id === draggableId
-    );
+    const draggedTask = tasks!.find((task) => task.id === draggableId);
 
     let updatedStatus: string;
 
@@ -102,9 +95,7 @@ const Board: React.FC<{ board: BoardTypes | null }> = ({
 
   return (
     <div className="dark:bg-gray-900 py-10 relative h-screen">
-      <h1 className="font-bold text-center mb-10 text-3xl">
-        {board!.name}
-      </h1>
+      <h1 className="font-bold text-center mb-10 text-3xl">{board!.name}</h1>
       <DragDropContext onDragEnd={onDragEnd}>
         <div className="grid md:grid-cols-3 max-md:items-center w-[90%] max-w-[1500px] mx-auto md:gap-5 gap-10">
           <button
@@ -124,23 +115,17 @@ const Board: React.FC<{ board: BoardTypes | null }> = ({
           )}
           <Column
             title="Todo"
-            tasks={tasks!.filter(
-              (task) => task.status === "TODO"
-            )}
+            tasks={tasks!.filter((task) => task.status === "TODO")}
             droppableId="todo"
           />
           <Column
             title="In Progress"
-            tasks={tasks!.filter(
-              (task) => task.status === "IN_PROGRESS"
-            )}
+            tasks={tasks!.filter((task) => task.status === "IN_PROGRESS")}
             droppableId="inProgress"
           />
           <Column
             title="Completed"
-            tasks={tasks!.filter(
-              (task) => task.status === "DONE"
-            )}
+            tasks={tasks!.filter((task) => task.status === "DONE")}
             droppableId="completed"
           />
         </div>
