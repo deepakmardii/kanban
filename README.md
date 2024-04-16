@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Kanban Board Project (v0.1.0)
 
-## Getting Started
+This project implements a Kanban board web application using Next.js and a Prisma database.
 
-First, run the development server:
+### Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+-   Visualize tasks in different stages (e.g., To Do, In Progress, Done)
+-   Drag and drop functionality for tasks between stages
+-   User authentication (potentially)
+
+### Dependencies
+
+This project uses a variety of libraries and frameworks:
+
+-   **Frontend:**  Next.js, React, Framer Motion, React Icons, React-Spinners
+-   **Backend:**  Prisma (database access)
+-   **Styling:**  Tailwind CSS
+-   **Authentication:**  Clerk.js (potential integration)
+-   **Development:**  ESLint, TypeScript
+
+### Usage
+
+**1. Prerequisites**
+
+-   Node.js and npm installed ([https://nodejs.org/en/download](https://nodejs.org/en/download))
+
+**2. Clone the Repository**
+
+
+```
+git clone https://your-github-repo.com/kanban.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**3. Install Dependencies**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+cd kanban
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**4. Development Server**
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+```
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This will start the development server at http://localhost:3000 by default.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+**5. Build for Production**
 
-## Deploy on Vercel
+```
+npm run build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This generates an optimized production build in the `.next` folder.
